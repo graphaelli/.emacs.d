@@ -97,20 +97,14 @@ Only turn off the menu bar running in a terminal window."
        auto-window-vscroll nil))))
 
 (defun gr/line-numbering ()
-  "Line numbering policies."
+  "Line numbering and highlighting policies."
   (global-linum-mode 1)
   (global-hl-line-mode 1)
 
   (require 'hlinum)
   (hlinum-activate)
 
-  (defun gr/hlinum-active-toggle()
-    "Toggle line number highlight."
-    (interactive)
-    (hlinum-deactivate)
-    )
-
-  (global-set-key (kbd "<f3>") 'gr/hlinum-active-toggle)
+  (global-set-key (kbd "<f3>") 'linum-mode)
   )
 
 (defun gr/set-dirs ()
