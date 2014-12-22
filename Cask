@@ -6,6 +6,7 @@
 (depends-on "epl")
 (depends-on "f")
 (depends-on "find-file-in-project")
+(depends-on "flymake-cursor")
 (depends-on "flymake-python-pyflakes")
 (depends-on "hlinum")
 (depends-on "jedi")

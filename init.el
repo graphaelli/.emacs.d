@@ -120,7 +120,9 @@ Only turn off the menu bar running in a terminal window."
 
   (require 'flymake-python-pyflakes)
   (add-hook 'python-mode-hook 'flymake-python-pyflakes-load)
-  (global-set-key (kbd "<f5>") 'flymake-popup-current-error-menu)
+  (global-set-key (kbd "<f5>") 'python-check)
+
+  (require 'flymake-cursor)
   )
 
 
