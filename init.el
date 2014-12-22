@@ -56,7 +56,7 @@ Only turn off the menu bar running in a terminal window."
   "Set save and trash dirs."
   (setq backup-directory-alist `(("." . "~/.emacs.d/.saves")))
   (setq trash-directory (expand-file-name "~/.emacs.d/trashes")
-      delete-by-moving-to-trash t))  
+      delete-by-moving-to-trash t))
 
 (gr/no-bars-held)
 (gr/keybinds)
