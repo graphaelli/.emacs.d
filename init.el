@@ -41,7 +41,7 @@ Only turn off the menu bar running in a terminal window."
       delete-by-moving-to-trash t))  
 
 (gr/no-bars-held)
-(gr/keymaps)
+;; (gr/keymaps)
 (gr/set-dirs)
 
 ;; Keep emacs Custom-settings in separate file
