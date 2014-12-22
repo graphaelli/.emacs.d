@@ -58,6 +58,7 @@ Only turn off the menu bar running in a terminal window."
 
    ;; unset
    (global-unset-key (kbd "C-h"))  ; just use <f1> so this can be del-back-char
+   (global-unset-key (kbd "<f3>"))  ; was kmacro-start-macro-or-insert-counter
    (global-unset-key (kbd "<f4>"))  ; was kmacro-end-or-call-macro
 
    ;; set
@@ -95,6 +96,17 @@ Only turn off the menu bar running in a terminal window."
        scroll-conservatively 10000
        auto-window-vscroll nil))))
 
+(defun gr/line-numbering ()
+  "Line numbering policies."
+  (global-linum-mode 1)
+  (global-hl-line-mode 1)
+
+  (require 'hlinum)
+  (hlinum-activate)
+
+  (global-set-key (kbd "<f3>") '(lambda () (interactive) (hlinum-deactivate)))
+  )
+
 (defun gr/set-dirs ()
   "Set save and trash dirs."
   (setq backup-directory-alist `(("." . "~/.emacs.d/.saves")))
@@ -107,6 +119,7 @@ Only turn off the menu bar running in a terminal window."
 (gr/set-dirs)
 (gr/setup-cask-and-pallet)
 (gr/find-file-in-project)
+(gr/line-numbering)
 
 (electric-pair-mode 1)
 
