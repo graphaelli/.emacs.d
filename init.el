@@ -127,4 +127,6 @@ Only turn off the menu bar running in a terminal window."
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
 (load custom-file)
 
+(set-face-attribute 'default nil :font "Source Code Pro-14")
+
 ;;; end of init.el
