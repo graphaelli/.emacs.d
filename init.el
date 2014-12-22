@@ -10,6 +10,24 @@ Only turn off the menu bar running in a terminal window."
       (menu-bar-mode -1))
   (defun yes-or-no-p (prompt) "y/n" (y-or-n-p prompt) ))
 
+(defun gr/keybinds ()
+   "Rebind some keys."
+
+   ;; unset
+   (global-unset-key (kbd "C-h"))  ; just use <f1> so this can be del-back-char
+   (global-unset-key (kbd "<f4>"))  ; was kmacro-end-or-call-macro
+
+   ;; set
+   (global-set-key (kbd "C-c DEL") 'join-line)
+   (global-set-key (kbd "C-h") 'delete-backward-char)
+   (global-set-key (kbd "C-M-h") 'backward-kill-word)
+   (global-set-key (kbd "C-S-h") 'kill-whole-line)
+   (global-set-key (kbd "s-=") 'text-scale-increase)
+   (global-set-key (kbd "s--") 'text-scale-decrease)
+   (global-set-key (kbd "s-0") '(lambda () (interactive) (text-scale-set 0)))
+   (global-set-key (kbd "<f4>") 'delete-trailing-whitespace)
+  )
+
 (defun gr/keymaps ()
   "Remap some keys on macs."
   (if (equal system-type 'darwin)
@@ -41,6 +59,7 @@ Only turn off the menu bar running in a terminal window."
       delete-by-moving-to-trash t))  
 
 (gr/no-bars-held)
+(gr/keybinds)
 ;; (gr/keymaps)
 (gr/set-dirs)
 
