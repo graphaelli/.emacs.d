@@ -104,7 +104,13 @@ Only turn off the menu bar running in a terminal window."
   (require 'hlinum)
   (hlinum-activate)
 
-  (global-set-key (kbd "<f3>") '(lambda () (interactive) (hlinum-deactivate)))
+  (defun gr/hlinum-active-toggle()
+    "Toggle line number highlight."
+    (interactive)
+    (hlinum-deactivate)
+    )
+
+  (global-set-key (kbd "<f3>") 'gr/hlinum-active-toggle)
   )
 
 (defun gr/set-dirs ()
