@@ -1,3 +1,15 @@
+(defvar gr/cask-directory
+  (expand-file-name "/usr/local/Cellar/cask/0.7.2"
+  "Cask home."))
+
+(defun gr/setup-cask-and-pallet ()
+  "Package management goodness."
+  (require 'cask (expand-file-name "cask.el" gr/cask-directory))
+  (cask-initialize)
+  (require 'pallet)
+  (pallet-mode t)
+  )
+
 (defun gr/no-bars-held ()
   "Turn off tool, scroll, and menu bars when appropriate.
 Only turn off the menu bar running in a terminal window."
@@ -62,6 +74,7 @@ Only turn off the menu bar running in a terminal window."
 (gr/keybinds)
 ;; (gr/keymaps)
 (gr/set-dirs)
+(gr/setup-cask-and-pallet)
 
 ;; Keep emacs Custom-settings in separate file
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))

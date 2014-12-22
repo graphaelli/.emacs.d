@@ -1,0 +1,13 @@
+(source gnu)
+(source melpa)
+
+(depends-on "cask")
+(depends-on "dash")
+(depends-on "epl")
+(depends-on "f")
+(depends-on "find-file-in-project")
+(depends-on "hlinum")
+(depends-on "package-build")
+(depends-on "pallet")
+(depends-on "s")
+(depends-on "shut-up")
