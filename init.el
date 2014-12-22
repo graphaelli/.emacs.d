@@ -108,6 +108,8 @@ Only turn off the menu bar running in a terminal window."
 (gr/setup-cask-and-pallet)
 (gr/find-file-in-project)
 
+(electric-pair-mode 1)
+
 ;; Keep emacs Custom-settings in separate file
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
 (load custom-file)
