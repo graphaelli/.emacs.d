@@ -8,6 +8,9 @@
   (cask-initialize)
   (require 'pallet)
   (pallet-mode t)
+
+  (when (memq window-system '(mac ns))
+      (exec-path-from-shell-initialize))
   )
 
 (defun gr/no-bars-held ()
@@ -133,7 +136,15 @@ Only turn off the menu bar running in a terminal window."
   (require 'flymake-cursor)
   )
 
+(defun gr/go ()
+  "Setup Go IDE."
 
+  (when (memq window-system '(mac ns))
+     (exec-path-from-shell-copy-env "GOPATH"))
+
+  (require 'go-autocomplete)
+  (require 'auto-complete-config)
+  )
 
 (gr/no-bars-held)
 (gr/keybinds)
@@ -144,6 +155,7 @@ Only turn off the menu bar running in a terminal window."
 (gr/line-numbering)
 (gr/autocomplete)
 (gr/python)
+(gr/go)
 
 (electric-pair-mode 1)
 
