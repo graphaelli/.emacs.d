@@ -113,6 +113,14 @@ Only turn off the menu bar running in a terminal window."
   (setq trash-directory (expand-file-name "~/.emacs.d/trashes")
       delete-by-moving-to-trash t))
 
+(defun gr/autocomplete ()
+  "Setup autocomplete."
+
+  (require 'auto-complete)
+  (require 'auto-complete-config)
+  )
+
+
 (defun gr/python ()
   "Setup python IDE."
   (add-hook 'python-mode-hook 'jedi:setup)
@@ -134,6 +142,7 @@ Only turn off the menu bar running in a terminal window."
 (gr/setup-cask-and-pallet)
 (gr/find-file-in-project)
 (gr/line-numbering)
+(gr/autocomplete)
 (gr/python)
 
 (electric-pair-mode 1)
