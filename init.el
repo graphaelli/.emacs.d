@@ -22,6 +22,37 @@ Only turn off the menu bar running in a terminal window."
       (menu-bar-mode -1))
   (defun yes-or-no-p (prompt) "y/n" (y-or-n-p prompt) ))
 
+(defun gr/find-file-in-project ()
+  (require 'find-file-in-project)
+
+  (setq ffip-limit 8192
+	ffip-find-options "-not -regex \".*/build.*\""
+	ffip-full-paths t
+	ffip-patterns (list "*.clj"
+			    "*.conf"
+			    "*.cron"
+			    "*.css"
+			    "*.el"
+			    "*.html"
+			    "*.js"
+			    "*.json"
+			    "*.mk"
+			    "*.md"
+			    "*.org"
+			    "*.py"
+			    "*.rb"
+			    "*.rst"
+			    "*.sh"
+			    "*.soy"
+			    "*.txt"
+			    "*.yml"
+			    "Makefile")
+	ffip-prune-patterns (list ".git" "build"))
+
+  (global-set-key (kbd "C-x C-S-f") 'find-file-in-project)
+  )
+
+
 (defun gr/keybinds ()
    "Rebind some keys."
 
@@ -75,6 +106,7 @@ Only turn off the menu bar running in a terminal window."
 ;; (gr/keymaps)
 (gr/set-dirs)
 (gr/setup-cask-and-pallet)
+(gr/find-file-in-project)
 
 ;; Keep emacs Custom-settings in separate file
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
