@@ -117,6 +117,10 @@ Only turn off the menu bar running in a terminal window."
   "Setup python IDE."
   (add-hook 'python-mode-hook 'jedi:setup)
   (setq jedi:complete-on-dot t)
+
+  (require 'flymake-python-pyflakes)
+  (add-hook 'python-mode-hook 'flymake-python-pyflakes-load)
+  (global-set-key (kbd "<f5>") 'flymake-popup-current-error-menu)
   )
 
 
