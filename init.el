@@ -150,6 +150,11 @@ Only turn off the menu bar running in a terminal window."
   (require 'auto-complete-config)
   )
 
+(defun gr/yas ()
+  (require 'yasnippet)
+  (yas-global-mode 1)
+  )
+
 (gr/no-bars-held)
 (gr/keybinds)
 ;; (gr/keymaps)
@@ -160,6 +165,7 @@ Only turn off the menu bar running in a terminal window."
 (gr/autocomplete)
 (gr/python)
 (gr/go)
+(gr/yas)
 
 (electric-pair-mode 1)
 

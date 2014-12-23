@@ -17,3 +17,4 @@
 (depends-on "s")
 (depends-on "shut-up")
 (depends-on "yaml-mode")
+(depends-on "yasnippet")
