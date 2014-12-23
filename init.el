@@ -195,6 +195,9 @@ Only turn off the menu bar running in a terminal window."
 ;; Automatically reload buffers when files change on disk.
 (global-auto-revert-mode 1)
 
+;; shut it
+(setq ring-bell-function 'ignore)
+
 ;; Keep emacs Custom-settings in separate file
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
 (load custom-file)
