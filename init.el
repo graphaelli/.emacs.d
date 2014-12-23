@@ -80,10 +80,10 @@ Only turn off the menu bar running in a terminal window."
   (if (equal system-type 'darwin)
     (progn
       ;; Command as meta.
-      (setq ns-command-modifier 'meta)
+      ;;(setq ns-command-modifier 'meta)
 
       ;; Option as hyper.
-      (setq ns-option-modifier 'hyper)
+      ;;(setq ns-option-modifier 'hyper)
 
       ;; fn as super.
       (setq ns-function-modifier 'super)
@@ -168,7 +168,7 @@ Only turn off the menu bar running in a terminal window."
 
 (gr/no-bars-held)
 (gr/keybinds)
-;; (gr/keymaps)
+(gr/keymaps)
 (gr/set-dirs)
 (gr/setup-cask-and-pallet)
 (gr/find-file-in-project)
