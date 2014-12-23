@@ -12,6 +12,7 @@
 (depends-on "go-mode")
 (depends-on "hlinum")
 (depends-on "jedi")
+(depends-on "multiple-cursors")
 (depends-on "package-build")
 (depends-on "pallet")
 (depends-on "s")

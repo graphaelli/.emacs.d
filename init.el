@@ -110,6 +110,11 @@ Only turn off the menu bar running in a terminal window."
   (global-set-key (kbd "<f3>") 'linum-mode)
   )
 
+(defun gr/multiple-cursors ()
+  "Multiple Cursor Setup."
+  (require 'multiple-cursors)
+  )
+
 (defun gr/set-dirs ()
   "Set save and trash dirs."
   (setq backup-directory-alist `(("." . "~/.emacs.d/.saves")))
