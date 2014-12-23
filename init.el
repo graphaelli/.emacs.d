@@ -1,3 +1,12 @@
+(defun gr/ask-before-closing ()
+  "Ask whether or not to close, and then close if y was pressed"
+  (interactive)
+  (if (y-or-n-p (format "Are you sure you want to exit Emacs? "))
+      (if (< emacs-major-version 22)
+          (save-buffers-kill-terminal)
+        (save-buffers-kill-emacs))
+    (message "Canceled exit")))
+
 (defvar gr/cask-directory
   (expand-file-name "/usr/local/Cellar/cask/0.7.2"
   "Cask home."))
@@ -82,6 +91,11 @@ Only turn off the menu bar running in a terminal window."
    (global-set-key (kbd "s--") 'text-scale-decrease)
    (global-set-key (kbd "s-0") '(lambda () (interactive) (text-scale-set 0)))
    (global-set-key (kbd "<f4>") 'delete-trailing-whitespace)
+
+   ;; try to break old habits
+   (when window-system
+     (global-set-key (kbd "C-x C-c") 'gr/ask-before-closing))
+
   )
 
 (defun gr/keymaps ()
