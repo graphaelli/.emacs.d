@@ -13,6 +13,15 @@
       (exec-path-from-shell-initialize))
   )
 
+(defun gr/server ()
+  "Emacs Server."
+
+  (require 'server)
+
+  (unless (server-running-p)
+    (server-start))
+  )
+
 (defun gr/no-bars-held ()
   "Turn off tool, scroll, and menu bars when appropriate.
 Only turn off the menu bar running in a terminal window."
@@ -172,6 +181,7 @@ Only turn off the menu bar running in a terminal window."
 (gr/no-bars-held)
 (gr/keybinds)
 (gr/keymaps)
+(gr/server)
 (gr/set-dirs)
 (gr/setup-cask-and-pallet)
 (gr/find-file-in-project)
