@@ -121,6 +121,7 @@ Only turn off the menu bar running in a terminal window."
 
   (require 'auto-complete)
   (require 'auto-complete-config)
+  (ac-config-default)
   )
 
 
