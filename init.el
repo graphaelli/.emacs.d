@@ -103,6 +103,9 @@ Only turn off the menu bar running in a terminal window."
   "Line numbering and highlighting policies."
   (global-linum-mode 1)
   (global-hl-line-mode 1)
+  (column-number-mode t)
+  (show-paren-mode)
+  (electric-pair-mode 1)
 
   (require 'hlinum)
   (hlinum-activate)
@@ -179,7 +182,6 @@ Only turn off the menu bar running in a terminal window."
 (gr/go)
 (gr/yas)
 
-(electric-pair-mode 1)
 
 ;; Keep emacs Custom-settings in separate file
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
