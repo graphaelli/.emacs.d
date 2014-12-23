@@ -182,6 +182,8 @@ Only turn off the menu bar running in a terminal window."
 (gr/go)
 (gr/yas)
 
+;; Automatically reload buffers when files change on disk.
+(global-auto-revert-mode 1)
 
 ;; Keep emacs Custom-settings in separate file
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
