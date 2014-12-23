@@ -139,6 +139,9 @@ Only turn off the menu bar running in a terminal window."
 (defun gr/go ()
   "Setup Go IDE."
 
+  (setq gofmt-command "goimports")
+  (add-hook 'before-save-hook 'gofmt-before-save)
+
   (when (memq window-system '(mac ns))
      (exec-path-from-shell-copy-env "GOPATH"))
 
