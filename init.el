@@ -155,6 +155,11 @@ Only turn off the menu bar running in a terminal window."
   (require 'auto-complete-config)
   )
 
+(defun gr/yaml ()
+  (require 'flymake-yaml)
+  (add-hook 'yaml-mode-hook 'flymake-yaml-load)
+  )
+
 (defun gr/yas ()
   (require 'yasnippet)
   (yas-global-mode 1)
@@ -170,6 +175,7 @@ Only turn off the menu bar running in a terminal window."
 (gr/autocomplete)
 (gr/python)
 (gr/go)
+(gr/yaml)
 (gr/yas)
 
 (electric-pair-mode 1)

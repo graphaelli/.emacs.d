@@ -9,6 +9,7 @@
 (depends-on "find-file-in-project")
 (depends-on "flymake-cursor")
 (depends-on "flymake-python-pyflakes")
+(depends-on "flymake-yaml")
 (depends-on "go-mode")
 (depends-on "hlinum")
 (depends-on "jedi")
