@@ -129,17 +129,23 @@ Only turn off the menu bar running in a terminal window."
   (ac-config-default)
   )
 
+(defun gr/flycheck ()
+  (add-hook 'after-init-hook #'global-flycheck-mode)
+  (add-hook 'flycheck-mode-hook 'flycheck-color-mode-line-mode)
+  )
 
 (defun gr/python ()
   "Setup python IDE."
   (add-hook 'python-mode-hook 'jedi:setup)
   (setq jedi:complete-on-dot t)
 
-  (require 'flymake-python-pyflakes)
-  (add-hook 'python-mode-hook 'flymake-python-pyflakes-load)
-  (global-set-key (kbd "<f5>") 'python-check)
 
-  (require 'flymake-cursor)
+  (require 'flycheck-pyflakes)
+  (add-hook 'python-mode-hook 'flycheck-mode)
+  (add-to-list 'flycheck-disabled-checkers 'python-flake8)
+  (add-to-list 'flycheck-disabled-checkers 'python-pylint)
+
+  (global-set-key (kbd "<f5>") 'python-check)
   )
 
 (defun gr/go ()
@@ -155,11 +161,6 @@ Only turn off the menu bar running in a terminal window."
   (require 'auto-complete-config)
   )
 
-(defun gr/yaml ()
-  (require 'flymake-yaml)
-  (add-hook 'yaml-mode-hook 'flymake-yaml-load)
-  )
-
 (defun gr/yas ()
   (require 'yasnippet)
   (yas-global-mode 1)
@@ -173,9 +174,9 @@ Only turn off the menu bar running in a terminal window."
 (gr/find-file-in-project)
 (gr/line-numbering)
 (gr/autocomplete)
+(gr/flycheck)
 (gr/python)
 (gr/go)
-(gr/yaml)
 (gr/yas)
 
 (electric-pair-mode 1)
