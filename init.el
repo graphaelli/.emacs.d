@@ -212,6 +212,9 @@ Only turn off the menu bar running in a terminal window."
 ;; shut it
 (setq ring-bell-function 'ignore)
 
+;; copy clipboard onto kill ring
+(setq save-interprogram-paste-before-kill t)
+
 ;; Keep emacs Custom-settings in separate file
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
 (load custom-file)
