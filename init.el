@@ -45,6 +45,11 @@ Only turn off the menu bar running in a terminal window."
   (fringe-mode (cdr (assoc "default" fringe-styles)))
   )
 
+(defun gr/expand-region ()
+    (require 'expand-region)
+    (global-set-key (kbd "C-M-SPC") 'er/expand-region)
+    )
+
 (defun gr/find-file-in-project ()
   (require 'find-file-in-project)
 
@@ -201,6 +206,7 @@ Only turn off the menu bar running in a terminal window."
 (gr/server)
 (gr/set-dirs)
 (gr/setup-cask-and-pallet)
+(gr/expand-region)
 (gr/find-file-in-project)
 (gr/line-numbering)
 (gr/autocomplete)
