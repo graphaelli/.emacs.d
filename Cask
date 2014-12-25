@@ -3,6 +3,7 @@
 
 (depends-on "cask")
 (depends-on "dash")
+(depends-on "diff-hl")
 (depends-on "epl")
 (depends-on "exec-path-from-shell")
 (depends-on "f")

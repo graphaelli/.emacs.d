@@ -136,6 +136,7 @@ Only turn off the menu bar running in a terminal window."
   (hlinum-activate)
 
   (global-set-key (kbd "<f3>") 'linum-mode)
+  (global-diff-hl-mode)
   )
 
 (defun gr/multiple-cursors ()
