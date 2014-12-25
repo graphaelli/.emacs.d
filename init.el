@@ -41,7 +41,9 @@ Only turn off the menu bar running in a terminal window."
            (not (window-system))
            (fboundp 'menu-bar-mode))
       (menu-bar-mode -1))
-  (defun yes-or-no-p (prompt) "y/n" (y-or-n-p prompt) ))
+  (defun yes-or-no-p (prompt) "y/n" (y-or-n-p prompt) )
+  (fringe-mode (cdr (assoc "default" fringe-styles)))
+  )
 
 (defun gr/find-file-in-project ()
   (require 'find-file-in-project)
