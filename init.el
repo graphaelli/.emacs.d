@@ -166,6 +166,12 @@ Only turn off the menu bar running in a terminal window."
 (defun gr/flycheck ()
   (add-hook 'after-init-hook #'global-flycheck-mode)
   (add-hook 'flycheck-mode-hook 'flycheck-color-mode-line-mode)
+
+  ;; Easier navigation for errors/warnings/etc.
+  ;; ◀◀
+  (global-set-key (kbd "<f7>") 'flycheck-previous-error)
+  ;; ▶▶
+  (global-set-key (kbd "<f9>") 'flycheck-next-error)
   )
 
 (defun gr/python ()
