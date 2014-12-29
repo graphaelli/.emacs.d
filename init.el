@@ -98,6 +98,10 @@ Only turn off the menu bar running in a terminal window."
    (global-set-key (kbd "s--") 'text-scale-decrease)
    (global-set-key (kbd "s-0") '(lambda () (interactive) (text-scale-set 0)))
    (global-set-key (kbd "<f4>") 'delete-trailing-whitespace)
+   (global-set-key (kbd "<f5>") (lambda () (interactive)
+				  (if (not (buffer-modified-p))
+				      (revert-buffer :ignore-auto :noconfirm)
+				    (revert-buffer))))
 
    ;; try to break old habits
    (when window-system
@@ -185,7 +189,7 @@ Only turn off the menu bar running in a terminal window."
   (add-to-list 'flycheck-disabled-checkers 'python-flake8)
   (add-to-list 'flycheck-disabled-checkers 'python-pylint)
 
-  (global-set-key (kbd "<f5>") 'python-check)
+  (global-set-key (kbd "<f8>") 'python-check)
   )
 
 (defun gr/go ()
