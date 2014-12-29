@@ -230,6 +230,12 @@ Only turn off the menu bar running in a terminal window."
 ;; copy clipboard onto kill ring
 (setq save-interprogram-paste-before-kill t)
 
+;; keep a list of recently opened files
+(recentf-mode 1)
+
+;; save/restore opened files
+(desktop-save-mode 1)
+
 ;; Keep emacs Custom-settings in separate file
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
 (load custom-file)
