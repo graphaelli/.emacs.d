@@ -235,5 +235,6 @@ Only turn off the menu bar running in a terminal window."
 (load custom-file)
 
 (set-face-attribute 'default nil :font "Source Code Pro-14")
+(set-face-attribute 'region nil :background "#70B8FF")
 
 ;;; end of init.el
