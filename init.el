@@ -147,6 +147,15 @@ Only turn off the menu bar running in a terminal window."
 	ido-use-faces t
 	ido-use-filename-at-point 'guess
 	)
+
+  (defun ido-recentf-open ()
+    "Use `ido-completing-read' to \\[find-file] a recent file"
+    (interactive)
+    (if (find-file (ido-completing-read "Find recent file: " recentf-list))
+	(message "Opening file...")
+      (message "Aborting")))
+
+  (global-set-key (kbd "C-x C-r") 'ido-recentf-open)
   )
 
 (defun gr/keybinds ()
@@ -305,6 +314,7 @@ Only turn off the menu bar running in a terminal window."
 
 ;; keep a list of recently opened files
 (recentf-mode 1)
+(setq recentf-max-saved-items 50)
 
 ;; save/restore opened files
 (desktop-save-mode 1)
