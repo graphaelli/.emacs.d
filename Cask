@@ -19,6 +19,7 @@
 (depends-on "gitignore-mode")
 (depends-on "go-mode")
 (depends-on "hlinum")
+(depends-on "ido-vertical-mode")
 (depends-on "jedi")
 (depends-on "jinja2-mode")
 (depends-on "multiple-cursors")

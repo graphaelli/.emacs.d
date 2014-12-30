@@ -80,6 +80,77 @@ Only turn off the menu bar running in a terminal window."
   (global-set-key (kbd "C-x C-S-f") 'find-file-in-project)
   )
 
+(defun gr/ido ()
+  "Setup Ido, like k20e does."
+
+  (require 'ido)
+  (require 'ido-vertical-mode)
+
+  (add-to-list 'ido-ignore-files "\\.DS_Store")
+
+  ;; Boring arrows be gone!
+  (setq ido-vertical-decorations '("\n"  ; left bracket around prospect list
+				   ""    ; right bracket around prospect list
+				   "\n"  ; separator between prospects, depends on `ido-separator`
+				   "\n▼" ; inserted at the end of a truncated list of prospects
+				   "["   ; left bracket around common match string
+				   "]"   ; right bracket around common match string
+				   " ✘"  ; no match
+				   " ✔"  ; matched
+				   " [Not readable]"
+				   " [Too big]"
+				   " ?"  ; confirm
+				   "\n"  ; left bracket around the sole remaining completion
+				   " ✔"  ; right bracket around the sole remaining completion
+				   ))
+
+  ;; (add-hook 'ido-minibuffer-setup-hook
+  ;;	    #'(lambda ()
+  ;;		"Bump up minibuffer text size and height."
+  ;;		(text-scale-set 3)
+  ;;		(setq max-mini-window-height 20)))
+
+  ;; Avoid `ido-vertical-mode' from eating M-p.
+  (setq ido-vertical-define-keys nil)
+
+  (defun gr/ido-setup()
+    "Setup key map and theme faces."
+
+    (define-key ido-completion-map (kbd "C-n") 'ido-next-match)
+    (define-key ido-completion-map (kbd "C-p") 'ido-prev-match)
+    (define-key ido-completion-map (kbd "<up>") 'ido-prev-match)
+    (define-key ido-completion-map (kbd "<down>") 'ido-next-match)
+    (define-key ido-completion-map (kbd "<left>") 'ido-vertical-prev-match)
+    (define-key ido-completion-map (kbd "<right>") 'ido-vertical-next-match)
+
+    (define-key ido-completion-map (kbd "C-h") 'delete-backward-char)
+
+    ;; Theme!
+    ;;    (let ((match (face-attribute 'font-lock-string-face :foreground))
+    ;;	  (highlight (face-attribute 'font-lock-keyword-face :foreground)))
+    ;;      (custom-set-faces `(ido-first-match ((t (:foreground ,match))))
+    ;;			`(ido-only-match ((t (:foreground ,match))))
+    ;;			`(flx-highlight-face ((t (:foreground ,highlight
+    ;;							      :underline nil))))))
+    )
+
+  (add-hook 'ido-setup-hook 'gr/ido-setup)
+
+  (ido-mode t)
+  (ido-vertical-mode t)
+  ;; (ido-ubiquitous-mode t)
+
+  (setq ido-enable-flex-matching t
+	ido-auto-merge-work-directories-length -1
+	ido-create-new-buffer 'always
+	ido-everywhere t
+	ido-ignore-extensions t
+	ido-show-dot-for-dired t
+	ido-max-file-prompt-width 0.2
+	ido-use-faces t
+	ido-use-filename-at-point 'guess
+	)
+  )
 
 (defun gr/keybinds ()
    "Rebind some keys."
@@ -217,6 +288,7 @@ Only turn off the menu bar running in a terminal window."
 (gr/set-dirs)
 (gr/setup-cask-and-pallet)
 (gr/expand-region)
+(gr/ido)
 (gr/find-file-in-project)
 (gr/line-numbering)
 (gr/autocomplete)
