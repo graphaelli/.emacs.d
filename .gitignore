@@ -1,1 +1,8 @@
 .cask
+.emacs.desktop
+.emacs.desktop.lock
+.python-environments
+ac-comphist.dat
+auto-save-list
+places
+recentf
