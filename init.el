@@ -126,13 +126,10 @@ Only turn off the menu bar running in a terminal window."
     (define-key ido-completion-map (kbd "C-h") 'delete-backward-char)
 
     ;; Theme!
-    ;;    (let ((match (face-attribute 'font-lock-string-face :foreground))
-    ;;	  (highlight (face-attribute 'font-lock-keyword-face :foreground)))
-    ;;      (custom-set-faces `(ido-first-match ((t (:foreground ,match))))
-    ;;			`(ido-only-match ((t (:foreground ,match))))
-    ;;			`(flx-highlight-face ((t (:foreground ,highlight
-    ;;							      :underline nil))))))
-    )
+    (let ((match (face-attribute 'font-lock-string-face :foreground))
+	  (highlight (face-attribute 'font-lock-keyword-face :foreground)))
+      (custom-set-faces `(ido-first-match ((t (:foreground ,match))))
+			`(ido-only-match ((t (:foreground ,match)))))))
 
   (add-hook 'ido-setup-hook 'gr/ido-setup)
 
