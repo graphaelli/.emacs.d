@@ -221,6 +221,9 @@ Only turn off the menu bar running in a terminal window."
   (require 'hlinum)
   (hlinum-activate)
 
+  (require 'fill-column-indicator)
+  (fci-mode)
+
   (global-set-key (kbd "<f3>") 'linum-mode)
   (global-diff-hl-mode)
   )
