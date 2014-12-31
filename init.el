@@ -222,7 +222,8 @@ Only turn off the menu bar running in a terminal window."
   (hlinum-activate)
 
   (require 'fill-column-indicator)
-  (fci-mode)
+  (define-globalized-minor-mode my-global-fci-mode fci-mode turn-on-fci-mode)
+  (my-global-fci-mode 1)
 
   (global-set-key (kbd "<f3>") 'linum-mode)
   (global-diff-hl-mode)
