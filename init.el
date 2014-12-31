@@ -204,7 +204,7 @@ Only turn off the menu bar running in a terminal window."
 
       ;; Trackpad taming.
       (setq
-       mouse-wheel-scroll-amount '(0.0001)
+       mouse-wheel-scroll-amount '(0.001)
        mouse-wheel-progressive-speed nil
        scroll-step 1
        scroll-conservatively 10000
