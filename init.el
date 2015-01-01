@@ -180,8 +180,9 @@ Only turn off the menu bar running in a terminal window."
    ;; set
    (global-set-key (kbd "C-c DEL") 'join-line)
    (global-set-key (kbd "C-h") 'delete-backward-char)
-   (global-set-key (kbd "C-M-h") 'backward-kill-word)
-   (global-set-key (kbd "C-S-h") 'kill-whole-line)
+   (global-set-key (kbd "C-S-k") 'kill-whole-line)
+   (global-set-key (kbd "C-<") 'beginning-of-buffer)
+   (global-set-key (kbd "C->") 'end-of-buffer)
    (global-set-key (kbd "s-=") 'text-scale-increase)
    (global-set-key (kbd "s--") 'text-scale-decrease)
    (global-set-key (kbd "s-0") '(lambda () (interactive) (text-scale-set 0)))
@@ -258,6 +259,8 @@ Only turn off the menu bar running in a terminal window."
   (require 'auto-complete)
   (require 'auto-complete-config)
   (ac-config-default)
+
+  (global-set-key [C-tab] 'auto-complete)
   )
 
 (defun gr/flycheck ()
