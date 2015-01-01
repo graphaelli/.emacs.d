@@ -45,6 +45,17 @@ Only turn off the menu bar running in a terminal window."
   (fringe-mode (cdr (assoc "default" fringe-styles)))
   )
 
+(defun gr/ag ()
+  (require 'ag)
+
+  (setq ag-arguments
+	'("--smart-case" "--nogroup" "--column" "--smart-case" "--stats" "--")
+	ag-highlight-search t)
+
+  (global-set-key (kbd "C-x C-a") 'ag-project)
+  (global-set-key (kbd "C-x C-S-a") 'ag-dired)
+  )
+
 (defun gr/expand-region ()
     (require 'expand-region)
     (global-set-key (kbd "C-M-SPC") 'er/expand-region)
@@ -298,6 +309,7 @@ Only turn off the menu bar running in a terminal window."
 (gr/server)
 (gr/set-dirs)
 (gr/setup-cask-and-pallet)
+(gr/ag)
 (gr/expand-region)
 (gr/ido)
 (gr/find-file-in-project)

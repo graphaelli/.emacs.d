@@ -1,6 +1,7 @@
 (source gnu)
 (source melpa)
 
+(depends-on "ag")
 (depends-on "cask")
 (depends-on "dash")
 (depends-on "diff-hl")
