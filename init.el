@@ -249,9 +249,12 @@ Only turn off the menu bar running in a terminal window."
 
 (defun gr/set-dirs ()
   "Set save and trash dirs."
-  (setq backup-directory-alist `(("." . "~/.emacs.d/.saves")))
+  (setq backup-directory-alist
+	`((".*" . ,temporary-file-directory)))
+  (setq auto-save-file-name-transforms
+	`((".*" ,temporary-file-directory t)))
   (setq trash-directory (expand-file-name "~/.emacs.d/trashes")
-      delete-by-moving-to-trash t))
+	delete-by-moving-to-trash t))
 
 (defun gr/autocomplete ()
   "Setup autocomplete."
