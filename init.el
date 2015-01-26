@@ -342,6 +342,9 @@ Only turn off the menu bar running in a terminal window."
 ;; save/restore opened files
 (desktop-save-mode 1)
 
+;; linkify
+(goto-address-mode 1)
+
 ;; Keep emacs Custom-settings in separate file
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
 (load custom-file)
