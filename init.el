@@ -67,26 +67,8 @@ Only turn off the menu bar running in a terminal window."
   (setq ffip-limit 8192
 	ffip-find-options "-not -regex \".*/build.*\""
 	ffip-full-paths t
-	ffip-patterns (list "*.clj"
-			    "*.conf"
-			    "*.cron"
-			    "*.css"
-			    "*.el"
-			    "*.html"
-			    "*.js"
-			    "*.json"
-			    "*.mk"
-			    "*.md"
-			    "*.org"
-			    "*.py"
-			    "*.rb"
-			    "*.rst"
-			    "*.sh"
-			    "*.soy"
-			    "*.txt"
-			    "*.yml"
-			    "Makefile")
-	ffip-prune-patterns (list ".git" "build"))
+	ffip-patterns '("*")
+	ffip-prune-patterns (list ".cask" ".git" ".idea" "build"))
 
   (global-set-key (kbd "C-x C-S-f") 'find-file-in-project)
   )
