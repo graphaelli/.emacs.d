@@ -216,7 +216,6 @@ Only turn off the menu bar running in a terminal window."
   (hlinum-activate)
 
   (require 'fill-column-indicator)
-  (set-fill-column 120)
   (define-globalized-minor-mode my-global-fci-mode fci-mode turn-on-fci-mode)
   (my-global-fci-mode 1)
 
@@ -279,6 +278,10 @@ Only turn off the menu bar running in a terminal window."
   (add-hook 'python-mode-hook 'flycheck-mode)
   (add-to-list 'flycheck-disabled-checkers 'python-flake8)
   (add-to-list 'flycheck-disabled-checkers 'python-pylint)
+
+  (add-hook 'python-mode-hook
+	    (lambda () (interactive)
+	      (set-fill-column 120)))
 
   (global-set-key (kbd "<f8>") 'python-check)
   )
