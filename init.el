@@ -286,6 +286,20 @@ Only turn off the menu bar running in a terminal window."
   (require 'auto-complete-config)
   )
 
+(defun gr/webmode ()
+  (require 'autopair)
+  (require 'web-mode)
+
+  (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
+
+  (defun gr/web-mode-hook ()
+    (autopair-mode -1)
+    (setq web-mode-engines-alist '(("django" . "\\.html?\\'"))
+	  web-mode-markup-indent-offset 2))
+
+  (add-hook 'web-mode-hook 'gr/web-mode-hook)
+)
+
 (defun gr/yas ()
   (require 'yasnippet)
   (yas-global-mode 1)
@@ -306,6 +320,7 @@ Only turn off the menu bar running in a terminal window."
 (gr/flycheck)
 (gr/python)
 (gr/go)
+(gr/webmode)
 (gr/yas)
 
 ;; Automatically reload buffers when files change on disk.
