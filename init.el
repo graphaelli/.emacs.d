@@ -352,6 +352,9 @@ Only turn off the menu bar running in a terminal window."
 ;; linkify
 (goto-address-mode 1)
 
+;; symlink'd into /usr/local/share/emacs/site-lisp/
+(require 'protobuf-mode)
+
 ;; automatically wrap searches
 (defadvice isearch-search (after isearch-no-fail activate)
   (unless isearch-success
