@@ -236,7 +236,17 @@ Only turn off the menu bar running in a terminal window."
   (setq auto-save-file-name-transforms
 	`((".*" ,temporary-file-directory t)))
   (setq trash-directory (expand-file-name "~/.emacs.d/trashes")
-	delete-by-moving-to-trash t))
+	delete-by-moving-to-trash t)
+
+  (defvar gr/backup-dir (expand-file-name "backup" user-emacs-directory)
+  "A single directory for storing backup files within.")
+
+  (unless (file-exists-p gr/backup-dir) (make-directory gr/backup-dir))
+
+  (setq backup-by-copying t
+	backup-directory-alist `(("." . ,gr/backup-dir))
+	delete-old-versions t
+	version-control t))
 
 (defun gr/autocomplete ()
   "Setup autocomplete."
