@@ -165,7 +165,6 @@ Only turn off the menu bar running in a terminal window."
    (global-set-key (kbd "C-S-k") 'kill-whole-line)
    (global-set-key (kbd "C-<") 'beginning-of-buffer)
    (global-set-key (kbd "C->") 'end-of-buffer)
-   (global-set-key (kbd "C-;") 'comment-region)
    (global-set-key (kbd "s-=") 'text-scale-increase)
    (global-set-key (kbd "s--") 'text-scale-decrease)
    (global-set-key (kbd "s-0") '(lambda () (interactive) (text-scale-set 0)))
