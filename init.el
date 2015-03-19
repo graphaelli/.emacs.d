@@ -313,11 +313,6 @@ Only turn off the menu bar running in a terminal window."
   (add-hook 'web-mode-hook 'gr/web-mode-hook)
 )
 
-(defun gr/yas ()
-  (require 'yasnippet)
-  (yas-global-mode 1)
-  )
-
 (gr/no-bars-held)
 (gr/keybinds)
 (gr/keymaps)
@@ -334,7 +329,6 @@ Only turn off the menu bar running in a terminal window."
 (gr/python)
 (gr/go)
 (gr/webmode)
-(gr/yas)
 
 ;; Automatically reload buffers when files change on disk.
 (global-auto-revert-mode 1)
