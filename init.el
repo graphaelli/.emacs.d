@@ -64,11 +64,11 @@ Only turn off the menu bar running in a terminal window."
 (defun gr/find-file-in-project ()
   (require 'find-file-in-project)
 
-  (setq ffip-limit 8192
+  (setq ffip-limit 1048576
 	ffip-find-options "-not -regex \".*/build.*\""
 	ffip-full-paths t
 	ffip-patterns '("*")
-	ffip-prune-patterns (list ".cask" ".git" ".idea" "build"))
+	ffip-prune-patterns (list ".cask" ".git" ".idea" "third-party" "build" "closure" "*.pyc"))
 
   (global-set-key (kbd "C-x C-S-f") 'find-file-in-project)
   )
