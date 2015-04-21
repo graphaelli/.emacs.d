@@ -336,6 +336,9 @@ Only turn off the menu bar running in a terminal window."
 ;; shut it
 (setq ring-bell-function 'ignore)
 
+;; disable lockfiles
+(setq create-lockfiles nil)
+
 ;; copy clipboard onto kill ring
 (setq save-interprogram-paste-before-kill t)
 
