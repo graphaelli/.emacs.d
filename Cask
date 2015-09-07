@@ -2,6 +2,7 @@
 (source melpa)
 
 (depends-on "ag")
+(depends-on "autopair")
 (depends-on "cask")
 (depends-on "dash")
 (depends-on "diff-hl")
@@ -28,6 +29,7 @@
 (depends-on "multiple-cursors")
 (depends-on "package-build")
 (depends-on "pallet")
+(depends-on "protobuf-mode")
 (depends-on "s")
 (depends-on "shut-up")
 (depends-on "web-mode")
