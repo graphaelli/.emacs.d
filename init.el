@@ -8,7 +8,7 @@
     (message "Canceled exit")))
 
 (defvar gr/cask-directory
-  (expand-file-name "/usr/local/Cellar/cask/0.7.2"
+  (expand-file-name "/usr/local/Cellar/cask/0.7.2_1"
   "Cask home."))
 
 (defun gr/setup-cask-and-pallet ()
