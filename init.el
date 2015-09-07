@@ -270,6 +270,7 @@ Only turn off the menu bar running in a terminal window."
 
 (defun gr/python ()
   "Setup python IDE."
+  (setq jedi:environment-root (expand-file-name "~/venv/emacs"))
   (add-hook 'python-mode-hook 'jedi:setup)
   (setq jedi:complete-on-dot t)
 
