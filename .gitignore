@@ -2,6 +2,8 @@
 .emacs.desktop
 .emacs.desktop.lock
 .python-environments
+.saves
+.trashes
 ac-comphist.dat
 auto-save-list
 places
