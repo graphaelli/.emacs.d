@@ -289,13 +289,16 @@ Only turn off the menu bar running in a terminal window."
 (defun gr/go ()
   "Setup Go IDE."
 
+  ;; go get -u github.com/nsf/gocode
+  ;; go get -u golang.org/x/tools/cmd/goimports
+
   (setq gofmt-command "goimports")
   (add-hook 'before-save-hook 'gofmt-before-save)
 
   (when (memq window-system '(mac ns))
      (exec-path-from-shell-copy-env "GOPATH"))
 
-  (require 'go-autocomplete)
+  (require 'go-autocomplete (expand-file-name "~/local/src/gocode/emacs/go-autocomplete.el"))
   (require 'auto-complete-config)
   )
 
