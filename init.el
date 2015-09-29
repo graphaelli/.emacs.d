@@ -232,6 +232,29 @@ Only turn off the menu bar running in a terminal window."
 (defun gr/multiple-cursors ()
   "Multiple Cursor Setup."
   (require 'multiple-cursors)
+
+  (defun gr/mark-next (extended)
+  "Wrap multiple-cursors mark-more/next.
+Call `mc/mark-next-like-this' without a prefix argument.
+Argument EXTENDED Prefix argument to call function `mc/mark-more-like-this-extended'."
+  (interactive "P")
+  (if extended
+      (call-interactively 'mc/mark-more-like-this-extended)
+    (call-interactively 'mc/mark-next-like-this)))
+
+(defun gr/mark-previous (extended)
+  "Wrap multiple-cursors mark-more/previous.
+Call `mc/mark-previous-like-this' without a prefix argument.
+Argument EXTENDED Prefix argument to call function `mc/mark-more-like-this-extended'."
+  (interactive "P")
+  (if extended
+      (call-interactively 'mc/mark-more-like-this-extended)
+    (call-interactively 'mc/mark-previous-like-this)))
+
+  (global-set-key (kbd "s-g") 'gr/mark-next)
+  (global-set-key (kbd "s-h") 'gr/mark-previous)
+  (global-set-key (kbd "M-g RET") 'mc/mark-all-like-this)
+
   )
 
 (defun gr/set-dirs ()
@@ -334,6 +357,7 @@ Only turn off the menu bar running in a terminal window."
 (gr/ido)
 (gr/find-file-in-project)
 (gr/line-numbering)
+(gr/multiple-cursors)
 (gr/autocomplete)
 (gr/flycheck)
 (gr/python)
