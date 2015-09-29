@@ -56,6 +56,11 @@ Only turn off the menu bar running in a terminal window."
   (global-set-key (kbd "C-x C-S-a") 'ag-dired)
   )
 
+(defun gr/display-buffer-file-name ()
+  "Message the full path to the currently visited file."
+  (interactive)
+  (message "%s" (buffer-file-name)))
+
 (defun gr/expand-region ()
     (require 'expand-region)
     (global-set-key (kbd "C-M-SPC") 'er/expand-region)
@@ -168,6 +173,7 @@ Only turn off the menu bar running in a terminal window."
    (global-set-key (kbd "s-=") 'text-scale-increase)
    (global-set-key (kbd "s--") 'text-scale-decrease)
    (global-set-key (kbd "s-0") '(lambda () (interactive) (text-scale-set 0)))
+   (global-set-key (kbd "C-x s-b") 'gr/display-buffer-file-name)
    (global-set-key (kbd "<f4>") 'delete-trailing-whitespace)
    (global-set-key (kbd "<f5>") (lambda () (interactive)
 				  (if (not (buffer-modified-p))
