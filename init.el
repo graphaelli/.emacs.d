@@ -333,6 +333,9 @@ Argument EXTENDED Prefix argument to call function `mc/mark-more-like-this-exten
   (when (memq window-system '(mac ns))
      (exec-path-from-shell-copy-env "GOPATH"))
 
+  ;; go get golang.org/x/tools/cmd/oracle
+  (load-file "$GOPATH/src/golang.org/x/tools/cmd/oracle/oracle.el")
+
   (require 'go-autocomplete (expand-file-name "~/local/src/gocode/emacs/go-autocomplete.el"))
   (require 'auto-complete-config)
   )
