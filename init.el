@@ -59,7 +59,12 @@ Only turn off the menu bar running in a terminal window."
 (defun gr/display-buffer-file-name ()
   "Message the full path to the currently visited file."
   (interactive)
-  (message "%s" (buffer-file-name)))
+  (let ((filename (if (equal major-mode 'dired-mode)
+                      default-directory
+                    (buffer-file-name))))
+    (when filename
+      (kill-new filename)
+      (message "%s" (buffer-file-name)))))
 
 (defun gr/expand-region ()
     (require 'expand-region)
