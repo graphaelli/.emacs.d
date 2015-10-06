@@ -168,6 +168,7 @@ Only turn off the menu bar running in a terminal window."
    (global-unset-key (kbd "C-h"))  ; just use <f1> so this can be del-back-char
    (global-unset-key (kbd "<f3>"))  ; was kmacro-start-macro-or-insert-counter
    (global-unset-key (kbd "<f4>"))  ; was kmacro-end-or-call-macro
+   (global-unset-key (kbd "C-M-v")) ; was scroll-other-window, free up for jumpcut
 
    ;; set
    (global-set-key (kbd "C-c DEL") 'join-line)
