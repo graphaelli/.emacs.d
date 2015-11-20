@@ -230,6 +230,7 @@ Only turn off the menu bar running in a terminal window."
   (require 'fill-column-indicator)
   (define-globalized-minor-mode my-global-fci-mode fci-mode turn-on-fci-mode)
   (my-global-fci-mode 1)
+  (setq-default fill-column 120)
 
   (global-set-key (kbd "<f3>") 'linum-mode)
   (global-diff-hl-mode)
