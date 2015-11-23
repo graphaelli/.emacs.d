@@ -374,6 +374,18 @@ Argument EXTENDED Prefix argument to call function `mc/mark-more-like-this-exten
 (gr/go)
 (gr/webmode)
 
+;; Add sort-words
+(defun sort-words (reverse beg end)
+      "Sort words in region alphabetically, in REVERSE if negative.
+    Prefixed with negative \\[universal-argument], sorts in reverse.
+
+    The variable `sort-fold-case' determines whether alphabetic case
+    affects the sort order.
+
+    See `sort-regexp-fields'."
+      (interactive "*P\nr")
+      (sort-regexp-fields reverse "\\w+" "\\&" beg end))
+
 ;; Automatically reload buffers when files change on disk.
 (global-auto-revert-mode 1)
 
