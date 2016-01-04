@@ -384,7 +384,8 @@ Argument EXTENDED Prefix argument to call function `mc/mark-more-like-this-exten
 
     See `sort-regexp-fields'."
       (interactive "*P\nr")
-      (sort-regexp-fields reverse "\\w+" "\\&" beg end))
+      (sort-regexp-fields reverse "[^[:space:]]+" "\\&" beg end))
+;;      (sort-regexp-fields reverse "\\w+" "\\&" beg end))
 
 ;; Automatically reload buffers when files change on disk.
 (global-auto-revert-mode 1)
