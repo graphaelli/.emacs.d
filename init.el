@@ -326,9 +326,7 @@ Argument EXTENDED Prefix argument to call function `mc/mark-more-like-this-exten
 (defun gr/go ()
   "Setup Go IDE."
 
-  ;; go get -u github.com/nsf/gocode
-  ;; go get -u golang.org/x/tools/cmd/goimports
-
+  ;; go get golang.org/x/tools/cmd/goimports
   (setq gofmt-command "goimports")
   (add-hook 'before-save-hook 'gofmt-before-save)
 
@@ -338,7 +336,9 @@ Argument EXTENDED Prefix argument to call function `mc/mark-more-like-this-exten
   ;; go get golang.org/x/tools/cmd/oracle
   (load-file "$GOPATH/src/golang.org/x/tools/cmd/oracle/oracle.el")
 
-  (require 'go-autocomplete (expand-file-name "~/local/src/gocode/emacs/go-autocomplete.el"))
+  ;; go get github.com/nsf/gocode
+  (require 'go-autocomplete (expand-file-name "~/local/go/src/github.com/nsf/gocode/emacs/go-autocomplete.el"))
+
   (require 'auto-complete-config)
   )
 
