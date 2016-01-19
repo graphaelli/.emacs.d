@@ -261,6 +261,7 @@ Argument EXTENDED Prefix argument to call function `mc/mark-more-like-this-exten
   (global-set-key (kbd "s-g") 'gr/mark-next)
   (global-set-key (kbd "s-h") 'gr/mark-previous)
   (global-set-key (kbd "M-g RET") 'mc/mark-all-like-this)
+  (global-set-key (kbd "C-s-<mouse-1>") 'mc/add-cursor-on-click)
 
   )
 
