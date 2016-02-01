@@ -410,6 +410,9 @@ Argument EXTENDED Prefix argument to call function `mc/mark-more-like-this-exten
 ;; linkify
 (goto-address-mode 1)
 
+;; always follow symlinks to vc files
+(setq vc-follow-symlinks t)
+
 ;; symlink'd into /usr/local/share/emacs/site-lisp/
 (require 'protobuf-mode)
 
