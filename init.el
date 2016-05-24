@@ -78,7 +78,7 @@ Only turn off the menu bar running in a terminal window."
 	ffip-find-options "-not -regex \".*/build.*\""
 	ffip-full-paths t
 	ffip-patterns '("*")
-	ffip-prune-patterns (list ".cask" ".git" ".idea" "third-party" "build" "closure" "*.pyc"))
+	ffip-prune-patterns (list "*/.cask/*" "*/.git/*" "*/.idea/*" "*/.ipynb_checkpoints/*" "*/.metadata/*" "third-party" "build" "closure" "*.pyc"))
 
   (global-set-key (kbd "C-x C-S-f") 'find-file-in-project)
   )
