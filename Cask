@@ -29,6 +29,7 @@
 (depends-on "package-build")
 (depends-on "pallet")
 (depends-on "protobuf-mode")
+(depends-on "rust-mode")
 (depends-on "s")
 (depends-on "shut-up")
 (depends-on "web-mode")
